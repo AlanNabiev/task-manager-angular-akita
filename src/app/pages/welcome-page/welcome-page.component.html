@@ -1,0 +1,13 @@
+<div class="flex flex-col mt-28 space-y-48">
+    <p class="text-center text-5xl font-bold text-blue-800">Welcome to task manager!</p>
+    <app-button 
+    class="mx-auto"
+    color="blue" 
+    size="sm"
+    to="/main"
+    (onClick)="work()" 
+    [disabled]="disable" 
+    >
+    Get Started!
+    </app-button>
+</div>
