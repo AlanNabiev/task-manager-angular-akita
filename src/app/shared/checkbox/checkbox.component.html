@@ -1,0 +1,20 @@
+<div>
+    <div class="checkbox-form">
+      <div class="answers">
+        <label 
+        *ngFor="let option of options; index as idx;" 
+        class="item"
+        [for]="option"
+        >
+          <span>{{ option }}</span>
+          <input
+            [id]="option"
+            [(ngModel)]="value"
+            type="checkbox"
+            [value]="option"
+          />
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+  </div>

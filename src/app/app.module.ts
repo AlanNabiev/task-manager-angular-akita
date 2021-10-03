@@ -10,6 +10,8 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 import { AppRoutingModule } from './routing/routing.module';
 import { ButtonComponent } from './shared/button/button.component';
+import { TaskListComponent } from './pages/main-page/components/task-list/task-list.component';
+import { CheckboxComponent } from './shared/checkbox/checkbox.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ButtonComponent } from './shared/button/button.component';
     InputComponent,
     MainPageComponent,
     WelcomePageComponent,
-    ButtonComponent
+    ButtonComponent,
+    TaskListComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
