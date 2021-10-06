@@ -1,0 +1,40 @@
+<div [ngSwitch]="authStatus$ | async">
+    <div *ngSwitchCase="true">
+        <div class="mx-96 flex flex-col space-y-5 p-5 bg-blue-100 shadow-lg rounded-xl my-20">
+            <h1 class="text-xl text-black text-center font-bold">Log In</h1>
+            <app-input 
+            [(ngModel)]="auth.name"
+            label="Name"
+            placeholder="input" 
+            ></app-input>
+            <app-input 
+            [(ngModel)]="auth.password"
+            label="Password" 
+            placeholder="input" 
+            ></app-input>
+            <app-button class="mx-auto" size="sm" color="blue" >Auth in</app-button>
+        </div>
+    </div>
+    <div *ngSwitchCase="false">
+        <div class="mx-96 flex flex-col space-y-5 p-5 bg-blue-100 shadow-lg rounded-xl my-20">
+            <h1 class="text-xl text-black text-center font-bold">Sign Up</h1>
+            <app-input 
+            [(ngModel)]="register.name" 
+            label="Name" 
+            placeholder="input" 
+            ></app-input>
+            <app-input 
+            [(ngModel)]="register.password" 
+            label="Password"
+            placeholder="input" 
+            ></app-input>
+            <app-input 
+            [(ngModel)]="register.repeatPassword" 
+            label="Repeat password" 
+            placeholder="input" 
+            ></app-input>
+            <app-button class="mx-auto" size="sm" color="blue" >Submit</app-button>
+        </div>
+
+    </div>
+</div>

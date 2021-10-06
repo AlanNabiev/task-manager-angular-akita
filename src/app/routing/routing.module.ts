@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {WelcomeComponent} from '../welcome/welcome.component'
-import {MainComponent} from '../main/main.component'
+import {WelcomeComponent} from '../modules/welcome/welcome.component'
+import {MainComponent} from '../modules/main/main.component'
 
 
 

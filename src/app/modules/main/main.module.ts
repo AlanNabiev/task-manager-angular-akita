@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
-import {MainComponent} from '../main/main.component'
+import { SharedModule } from '../../shared/shared.module';
+import {MainComponent} from './main.component'
 
 
 

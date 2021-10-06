@@ -33,6 +33,8 @@ export class ButtonComponent {
       return 'bg-gray-300 text-white cursor-default'
     }
     switch(this.color) {
+      case 'primary':
+        return 'text-blue-600 border border-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500'
       case 'blue':
         return 'text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-500'
       case 'red':
