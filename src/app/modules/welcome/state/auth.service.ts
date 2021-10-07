@@ -19,6 +19,12 @@ export class AuthService {
   updateAuthStatus(authStatus: boolean) {
     this.authStore.update({authStatus})
   }
+  updateLogInStatus(logInStatus: boolean) {
+    this.authStore.update({logInStatus})
+  }
+  updateSelectedAccount(selectedAccount: account) {
+    this.authStore.update({selectedAccount})
+  }
 
 
 }

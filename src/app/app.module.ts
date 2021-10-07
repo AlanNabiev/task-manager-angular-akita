@@ -11,13 +11,15 @@ import { AppRoutingModule } from './routing/routing.module';
 import { MainModule } from './modules/main/main.module'
 import { WelcomeModule } from './modules/welcome/welcome.module'
 import { SharedModule } from './shared/shared.module';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    AppComponent
+    AppComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -4,13 +4,20 @@ import {account} from './auth.types'
 
 export interface AuthState {
    authStatus: boolean;
-   accounts: Array<account>
+   logInStatus: boolean;
+   accounts: Array<account>;
+   selectedAccount: account;
 }
 
 export function createInitialState(): AuthState {
   return {
     authStatus: false,
-    accounts: []
+    logInStatus: false,
+    accounts: [],
+    selectedAccount: {
+      name: "",
+      password: ""
+    }
   };
 }
 

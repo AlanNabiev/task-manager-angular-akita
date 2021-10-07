@@ -21,4 +21,20 @@ export class AuthQuery extends Query<AuthState> {
     return this.select(state => state.authStatus)
   }
 
+ selectLogInStatus() {
+    return this.select(state => state.logInStatus)
+  }
+
+  selectSelectedAccount() {
+    return this.select(state => state.selectedAccount)
+  }
+
+  getSelectedAccount() {
+    return this.getValue().selectedAccount
+  }
+
+  selectSelectedAccountName() {
+    return this.select(state => state.selectedAccount.name)
+  }
+
 }

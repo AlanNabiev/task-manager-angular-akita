@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Observable } from 'rxjs';
+import { AuthQuery } from 'src/app/modules/welcome/state/auth.query';
 import { AuthService } from 'src/app/modules/welcome/state/auth.service';
 
 @Component({
@@ -7,9 +9,18 @@ import { AuthService } from 'src/app/modules/welcome/state/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private authQuery: AuthQuery) { }
+
+  @Output() openNav = new EventEmitter<boolean>();
+
+  openNavbar() {
+    this.openNav.emit()
+  }
+  
+  logInStatus$?: Observable<boolean>
 
   ngOnInit(): void {
+    this.logInStatus$ = this.authQuery.selectLogInStatus()
   }
 
   selectSignUp() {
@@ -18,6 +29,11 @@ export class HeaderComponent implements OnInit {
 
   selectSignIn() {
     this.authService.updateAuthStatus(true)
+  }
+
+  logOutEvent() {
+    this.authService.updateSelectedAccount({name: "", password: ""})
+    this.authService.updateLogInStatus(false)
   }
 
 }

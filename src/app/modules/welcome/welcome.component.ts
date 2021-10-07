@@ -14,10 +14,10 @@ export class WelcomeComponent implements OnInit {
   constructor(private authQuery: AuthQuery, private authService: AuthService) { }
 
   authStatus$?: Observable<boolean>
-  accounts$?: Observable<Array<account>>
+  accounts$?: Array<account>
   ngOnInit(): void {
     this.authStatus$ = this.authQuery.selectAuthStatus()
-    this.accounts$ = this.authQuery.selectAccounts()
+    this.accounts$ = this.authQuery.getAccounts()
   }
 
 
@@ -38,6 +38,27 @@ export class WelcomeComponent implements OnInit {
       password: this.register.password
     }
     this.authService.updateAccount(account)
+  }
+
+  accountValidator: boolean = false
+  logInEvent() {
+    //@ts-ignore
+    const selAcc = this.accounts$.filter((el) => el.name === this.auth.name)
+    if (selAcc.length && selAcc[0].password === this.auth.password) {
+      this.accountValidator = false
+      this.authService.updateSelectedAccount(selAcc[0])
+      this.authService.updateLogInStatus(true)
+    } else {
+      this.accountValidator = true
+    }
+  }
+
+
+  selectSignUp() {
+    this.authService.updateAuthStatus(false)
+  }
+  selectSignIn() {
+    this.authService.updateAuthStatus(true)
   }
 
   
