@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
+import {account} from './auth.types'
 
 export interface AuthState {
    authStatus: boolean;
-   name: string;
-   password: string;
+   accounts: Array<account>
 }
 
 export function createInitialState(): AuthState {
   return {
     authStatus: false,
-    name: '',
-    password: ''
+    accounts: []
   };
 }
 

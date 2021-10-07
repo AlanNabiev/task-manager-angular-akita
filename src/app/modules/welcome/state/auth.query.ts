@@ -9,12 +9,12 @@ export class AuthQuery extends Query<AuthState> {
     super(store);
   }
 
-  selectName() {
-    return this.select(state => state.name)
+  selectAccounts() {
+    return this.select(state => state.accounts)
   }
 
-  selectPassword() {
-    return this.select(state => state.password)
+  getAccounts() {
+    return this.getValue().accounts
   }
 
   selectAuthStatus() {

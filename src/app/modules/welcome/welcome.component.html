@@ -12,7 +12,12 @@
             label="Password" 
             placeholder="input" 
             ></app-input>
-            <app-button class="mx-auto" size="sm" color="blue" >Auth in</app-button>
+            <app-button 
+            class="mx-auto" 
+            size="sm" 
+            color="blue" 
+            [disabled]="!auth.name || !auth.password" 
+            >Auth in</app-button>
         </div>
     </div>
     <div *ngSwitchCase="false">
@@ -33,8 +38,15 @@
             label="Repeat password" 
             placeholder="input" 
             ></app-input>
-            <app-button class="mx-auto" size="sm" color="blue" >Submit</app-button>
+            <app-button 
+            class="mx-auto" 
+            size="sm" 
+            color="blue"
+            (onClick)="registerEvent()"
+            [disabled]="!register.name || !register.password || (register.password ? register.password !== register.repeatPassword : true)"
+            >Submit</app-button>
         </div>
+
 
     </div>
 </div>
