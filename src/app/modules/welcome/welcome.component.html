@@ -26,6 +26,7 @@
                             class="mx-auto" 
                             size="sm" 
                             color="blue"
+                            to="/main"
                             (onClick)="logInEvent()"
                             [disabled]="!auth.name || !auth.password" 
                             >Auth in</app-button>
@@ -62,6 +63,7 @@
                 size="sm" 
                 color="blue"
                 (onClick)="registerEvent()"
+                to="/main"
                 [disabled]="!register.name || !register.password || (register.password ? register.password !== register.repeatPassword : true)"
                 >Submit</app-button>
             </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { task } from './main.types';
+import { TaskService } from './state/task.service';
 
 @Component({
   selector: 'app-main',
@@ -6,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
 
+  task: task = {
+    name: "",
+    description: "",
+    status: "pending"
+  }
+
+  addTask() {
+    this.taskService.updateTaskList(this.task)
+  }
+  
+  clearTask() {
+    this.task.name = ""
+  }
 }

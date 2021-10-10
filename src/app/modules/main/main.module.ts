@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import {MainComponent} from './main.component'
+import {MainComponent} from './main.component';
+import { TaskListComponent } from './components/task-list/task-list.component'
 
 
 
 
 @NgModule({
   declarations: [
-    MainComponent
+    MainComponent,
+    TaskListComponent
   ],
   imports: [
     SharedModule

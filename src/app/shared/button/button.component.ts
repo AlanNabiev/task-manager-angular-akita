@@ -6,7 +6,7 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 })
 export class ButtonComponent {
   
-  @Input() to: string = "";
+  @Input() to?: string;
   @Output() onClick = new EventEmitter<boolean>();
 
 
@@ -20,7 +20,7 @@ export class ButtonComponent {
         case 'md':
           return 'p-4 text-lg';
         case 'lg':
-          return 'w-full py-3 text-2xl';
+          return 'px-16 py-3 text-xl';
         default:
           return 'p-3 text-base';
           
